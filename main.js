@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         mimicServerCall()
           .then(function (response) {
             likeGlyph.innerHTML = FULL_HEART;
-            likeGlyph.style.color = "red";
+            // likeGlyph.style.color = "red";
+            likeGlyph.classList.add("activated-heart");
           })
 
           .catch(function (error) {
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       } else {
         likeGlyph.innerHTML = EMPTY_HEART;
+        likeGlyph.classList.remove("activated-heart");
       }
     });
   });
